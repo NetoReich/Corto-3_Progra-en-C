@@ -1,0 +1,136 @@
+// Ejercicio 1
+#include <stdio.h>
+
+int main()
+{
+  char a[] = "Johann Haeussler";
+  char b[] = "21223";
+  printf("Mi nombre es %s y el valor de carnet es %s \n", a, b);
+  return 0;
+}
+
+#include <stdio.h>
+
+// Ejercicio 2
+int main()
+{
+  float celsius, fahrenheit, suma;
+  printf("Ingrese temperatura en Celsius: ");
+  scanf("%f", &celsius);
+  fahrenheit = (celsius * 1.8) + 32;
+  
+  printf("%.2f grados celsius son %.2f grados fahrenheit\n", celsius, fahrenheit);
+  return 0;
+}
+
+// Ejercicio 3
+int main()
+{
+    int n, i, t1 = 0, t2 = 1, SigT;
+    printf("Ingrese Numero de terminos de Fibonacci: ");
+    scanf("%d", &n);
+    printf("Serie de Fibonacci: ");
+    
+    for (i = 1; i <= n; i++) {
+    printf("%d ", t1);
+    SigT = t1 + t2;
+    t1 = t2;
+    t2 = SigT;
+    }
+    return 0;
+}
+
+// Ejercicio 4
+#include <stdio.h>
+#include "add.h"
+
+int main()
+{
+    int a, b;
+    printf("Ingrese dos numeros enteros: ");
+    scanf("%d%d", &a, &b);
+
+    int suma = sum(a, b);
+    int resta = res(a, b);
+    int multiplicacion = mul(a, b);
+    float division = divi(a, b);
+
+    printf("Valor de PI: %.5f\n", PI);
+    printf("Suma: %d\n", suma);
+    printf("Resta: %d\n", resta);
+    printf("Multiplicacion: %d\n", multiplicacion);
+    
+    if (b == 0) {
+        printf("\n");
+    }
+    else
+    printf("Division: %.2f\n", division);
+
+    return 0;
+}
+
+
+#ifndef ADD_H
+#define ADD_H
+
+#define PI 3.14159
+
+int sum(int a, int b);
+int res(int a, int b);
+int mul(int a, int b);
+float divi(int a, int b);
+
+#endif /*ADD_H*/
+
+
+
+#include "add.h"
+
+int sum(int a, int b)
+{
+    return a + b;
+}
+
+int res(int a, int b)
+{
+    return a - b;
+}
+
+int mul(int a, int b)
+{
+    return a * b;
+}
+
+float divi(int a, int b)
+{
+    if (b == 0) {
+        printf("NO SE PUEDE DIVIDIR POR CERO");
+        return 0;
+    }
+    else
+    return (float) a / b;
+}
+
+//Ejercicio 5
+
+#include <stdio.h>
+
+#define N 10 
+
+int main() {
+    int arr[N]; 
+    int *ptr = arr; 
+
+    printf("Ingrese %d numeros enteros:\n", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]); 
+    }
+
+    printf("Elementos del array multiplicados por 2:\n");
+    for (int i = 0; i < N; i++) {
+        printf("%d ", (*ptr) * 2); 
+        ptr++; 
+
+    return 0;
+}
+
